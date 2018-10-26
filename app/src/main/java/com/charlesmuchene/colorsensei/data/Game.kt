@@ -46,6 +46,7 @@ object Game {
     }
 
     private fun reset() {
+        scores = 0
         playCount = 0
         gameData.clear()
         currentPlay = null
