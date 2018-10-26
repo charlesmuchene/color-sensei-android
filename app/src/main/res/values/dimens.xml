@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dimensions -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="zero_dimension">0dp</dimen>
+    <dimen name="stat_view_height">48dp</dimen>
+    <dimen name="color_name_view_height">48dp</dimen>
+    <dimen name="standard_vertical_margin">16dp</dimen>
+    <dimen name="color_name_view_corner_radius">8dp</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="color_name_text_size">16sp</dimen>
+
+</resources>
