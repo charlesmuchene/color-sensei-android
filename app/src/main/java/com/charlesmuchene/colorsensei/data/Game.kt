@@ -17,8 +17,17 @@ object Game {
     private var gameData = mutableListOf<Play>()
     private var duration: GameDuration = GameDuration.SHORT
 
+    val gameDuration: Long
+        get() = duration.duration
+
     val isInitialized: Boolean
         get() = ColorData.isLoaded
+
+    val isGameOnPlay: Boolean
+        get() = state == GameState.PLAY
+
+    val gameState: GameState
+        get() = state
 
     /**
      * Shuffle game play
@@ -49,6 +58,7 @@ object Game {
      * @return [Pair] of [Play] and [GameState]
      */
     fun getNextPlay(): Pair<Play?, GameState> {
+        if (state == GameState.TIME_OUT) return Pair(null, state)
 
         currentPlay = gameData.elementAtOrNull(playCount++)
 
@@ -71,5 +81,21 @@ object Game {
 
     fun getTally(): String {
         return "$scores/${duration.plays}"
+    }
+
+    fun play() {
+        setGameState(GameState.PLAY)
+    }
+
+    fun pause() {
+        setGameState(GameState.PAUSE)
+    }
+
+    fun gameDone() {
+        setGameState(GameState.DONE)
+    }
+
+    private fun setGameState(state: GameState) {
+        this.state = state
     }
 }

@@ -13,13 +13,21 @@ import org.greenrobot.eventbus.EventBus
  *
  * @param futureMillis Duration of the timer
  */
-class Timer(futureMillis: Long) : CountDownTimer(futureMillis, 1_000) {
+class GameTimer(futureMillis: Long) : CountDownTimer(futureMillis, 1_000) {
+
+    var remainingMillis: Long = futureMillis
+        private set
 
     override fun onFinish() {
         EventBus.getDefault().post(TimerDone)
     }
 
     override fun onTick(millisUntilFinished: Long) {
+        remainingMillis = millisUntilFinished
         EventBus.getDefault().post(RemainingTime(millisUntilFinished))
+    }
+
+    companion object {
+        const val futureMillis = "future_millis"
     }
 }

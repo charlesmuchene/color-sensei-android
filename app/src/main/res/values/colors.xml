@@ -7,5 +7,6 @@
     <color name="yes_fab_tint">@android:color/holo_green_dark</color>
     <color name="no_fab_tint">@android:color/holo_red_dark</color>
     <color name="color_name_view_background_color">#b3212121</color>
+    <color name="overlay_background_color">#dd000000</color>
 
 </resources>

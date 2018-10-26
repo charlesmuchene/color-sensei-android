@@ -2,6 +2,7 @@ package com.charlesmuchene.colorsensei.presentation
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.charlesmuchene.colorsensei.R
 import com.charlesmuchene.colorsensei.data.Game
@@ -11,6 +12,7 @@ import com.charlesmuchene.colorsensei.data.models.Success
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import timber.log.Timber
 
 /**
  * Start activity
@@ -57,6 +59,8 @@ class StartActivity : AppCompatActivity() {
      * Show error loading game data
      */
     private fun showErrorLoadingGameData() {
-
+        val message = getString(R.string.error_loading_game_data)
+        Timber.e(message)
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

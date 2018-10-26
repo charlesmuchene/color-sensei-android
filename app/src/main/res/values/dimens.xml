@@ -6,7 +6,9 @@
     <dimen name="zero_dimension">0dp</dimen>
     <dimen name="stat_view_height">48dp</dimen>
     <dimen name="color_name_view_height">48dp</dimen>
+    <dimen name="response_image_dimension">96dp</dimen>
     <dimen name="standard_vertical_margin">16dp</dimen>
+    <dimen name="standard_horizontal_margin">16dp</dimen>
     <dimen name="color_name_view_corner_radius">8dp</dimen>
 
     <!-- Font sizes -->
